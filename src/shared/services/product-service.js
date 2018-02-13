@@ -12,7 +12,7 @@ import {
     ADD_TO_CART_URL,
     GET_CART_LIST_URL,
     DELETE_FROM_CART,
-    // tokenToVerify
+    tokenToVerify
 } from '../constants/constants';
 
 export const createProduct = (body) => {
@@ -75,7 +75,7 @@ export const deleteFromCart = (body) => {
 export const getAllProducts = () => {
     return fetch(PRODUCTS_LIST_URL, {
         method: GET,
-        // headers: {'x-access-token': tokenToVerify}
+        headers: {'x-access-token': tokenToVerify}
     })
 }
 

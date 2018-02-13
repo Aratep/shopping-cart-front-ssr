@@ -6,7 +6,7 @@ class NavBar extends Component {
         return (
             <div>
                 <nav className="w3-sidebar w3-bar-block back-color w3-collapse w3-top "
-                     style={{Zindex: "3", width: 250 + "px"}}
+                     style={{Zindex: 3, width: 250 + "px"}}
                      id="mySidebar">
                     <div className="w3-container w3-display-container w3-padding-16">
                         <i className="fa fa-remove w3-hide-large w3-button w3-display-topright"/>

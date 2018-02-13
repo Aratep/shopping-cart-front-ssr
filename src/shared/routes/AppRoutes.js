@@ -5,10 +5,8 @@ import {PrivateRoute} from './PrivateRouter';
 import Login from '../components/login/Login';
 import Register from '../components/register/Register';
 import ProductList from '../components/products/ProductList';
-import SingleProduct from '../components/single-product/SingleProduct';
-import UserCart from '../components/user-cart/UserCart';
-import UserAccount from '../components/user-account/UserAccount';
 import SingleProductContainer from '../containers/SingleProduct';
+import ProductListContainer from '../containers/ProductList';
 import UserCartContainer from '../containers/UserCart';
 import UserAccountContainer from '../containers/UserAccount';
 import {NoMatch} from '../components/404/NoMatch';
@@ -32,7 +30,7 @@ export const routes = [
     },
     {
         path: "/products-list",
-        component: ProductList
+        component: ProductListContainer
     },
     {
         path: "/my-cart",
@@ -46,10 +44,10 @@ export const routes = [
         path: "/product-list/product/:id",
         component: SingleProductContainer
     },
-    // {
-    //     path: "/my-account",
-    //     component: News
-    // }
+    {
+        // path: "/my-account",
+        component: NoMatch
+    }
 ];
 
 export const AppRouting = () => (
@@ -62,6 +60,7 @@ export const AppRouting = () => (
             <Route {...routes[4]}/>
             <Route {...routes[5]}/>
             <Route {...routes[6]}/>
+            <Route {...routes[7]} />
         </Switch>
     </div>
 )

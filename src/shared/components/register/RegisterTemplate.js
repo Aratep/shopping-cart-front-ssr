@@ -7,8 +7,8 @@ import validate from '../../validators/register';
 
 class RegisterTemplate extends Component {
     render() {
-        // const {handleSubmit, regStatus, redirectToReferrer, from} = this.props;
-        const {handleSubmit} = this.props;
+        const {handleSubmit, regStatus, redirectToReferrer, from} = this.props;
+        // const {handleSubmit} = this.props;
         // console.log(redirectToReferrer);
 
 
@@ -17,7 +17,7 @@ class RegisterTemplate extends Component {
                 <div className="custom-row">
                     <form onSubmit={handleSubmit} autoComplete='on'>
                         <p className='validation-error'>
-                            {/*{regStatus}*/}
+                            {regStatus}
                         </p>
                         <div>
                             <Field
@@ -84,9 +84,9 @@ class RegisterTemplate extends Component {
                         <Link to='/login' className="to_register"> Go and log in </Link>
                     </p>
                 </div>
-                {/*{*/}
-                    {/*redirectToReferrer === true && <Redirect to={from}/>*/}
-                {/*}*/}
+                {
+                    redirectToReferrer === true && <Redirect to={from}/>
+                }
             </div>
         );
     }

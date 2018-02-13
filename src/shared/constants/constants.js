@@ -1,4 +1,5 @@
-// export const tokenToVerify = localStorage.getItem('tokenToVerify');
+export const tokenToVerify = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6InN1cGVyc2VjcmV0IHRva2VuIiwiaWF0IjoxNTE4NTMzNjYwfQ.XHxmYN7KtuiTADAPanlpraDk61Yb-bfCvkHgffLJnXs'
+// console.log(tokenToVerify);
 export const POST = 'POST';
 export const GET = 'GET';
 export const PUT = 'PUT';
@@ -6,7 +7,7 @@ export const DELETE = 'DELETE';
 export const HEADERS = {
     'Accept': 'application/json',
     'Content-Type': 'application/json; charset=utf-8',
-    // 'x-access-token': {tokenToVerify}
+    'x-access-token': {tokenToVerify}
 };
 
 export const REGISTER_URL = 'http://localhost:8080/users/register';

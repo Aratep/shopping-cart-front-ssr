@@ -18,18 +18,6 @@ class App extends Component {
                     <Header/>
                     <div className='margin'>
                         <AppRouting/>
-                        {/*/!*{routes.map((route, i) => {return <Route key={i} {...route} />})}*!/*/}
-                        {/*<div>*/}
-                            {/*<Switch>*/}
-                                {/*<Route {...routes[0]}/>*/}
-                                {/*<Route {...routes[1]}/>*/}
-                                {/*<Route {...routes[2]}/>*/}
-                                {/*<Route {...routes[3]}/>*/}
-                                {/*<Route {...routes[4]}/>*/}
-                                {/*<Route {...routes[5]}/>*/}
-                                {/*<Route {...routes[6]}/>*/}
-                            {/*</Switch>*/}
-                        {/*</div>*/}
                     </div>
                     <Footer/>
                 </div>
