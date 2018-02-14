@@ -1,11 +1,29 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import ReactLoading from 'react-loading';
 
 import {AuthButton} from '../../services/auth-service';
 
 class Header extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            currentUserToken: null
+        }
+    }
+
+    componentDidMount() {
+        const currentUserToken = localStorage.getItem('userToken');
+        this.setState({currentUserToken})
+    }
+
     render() {
-        // const currentUserToken = localStorage.getItem('userToken');
+        const {currentUserToken} = this.state;
+        // console.log(currentUserToken);
+        // if(currentUserToken === null) {
+        //     return <ReactLoading color='black' type='spokes' className="center"/>
+        // }
 
         return (
             <div className='grey'>
@@ -15,15 +33,15 @@ class Header extends Component {
                         <Link to='/products-list' className='decor-non'>Products</Link>
                     </p>
                     <p className="w3-right">
-                        {/*<span className='w3-margin-right font-size'>*/}
-                            {/*{*/}
-                                {/*currentUserToken ? <span className='w3-margin-right font-size'>*/}
-                                    {/*<AuthButton/>*/}
-                                {/*</span> : <span className='w3-margin-right font-size'>*/}
+                        <span className='w3-margin-right font-size'>
+                            {
+                                currentUserToken !== null ? <span className='w3-margin-right font-size'>
+                                    <AuthButton/>
+                                </span> : <span className='w3-margin-right font-size'>
                                     <Link className='w3-margin-right font-size' to='/login'>Sign In</Link>
-                                {/*</span>*/}
-                            {/*}*/}
-                        {/*</span>*/}
+                                </span>
+                            }
+                        </span>
                         <Link to='/my-account' className=' w3-margin-right'>
                             {/*My Account*/}
                             <i className="fa fa-user w3-margin-right"/>

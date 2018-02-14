@@ -2,12 +2,10 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import ReactLoading from 'react-loading';
 import jwt from 'jsonwebtoken';
-import "isomorphic-fetch";
 
 import { addToCart} from '../../services/product-service';
 import {getToken} from '../../services/auth-service';
-import {allProducts, userProducts} from '../../actions/index';
-import {GET, PRODUCTS_LIST_URL, tokenToVerify} from "../../constants/constants";
+import { userProducts} from '../../actions/index';
 import {_getAllProducts} from "../../reducers/products";
 
 class ProductList extends Component {
@@ -19,13 +17,8 @@ class ProductList extends Component {
             token: null
         }
     }
-    // static token = () => {
-    //     localStorage.getItem('tokenToVerify')
-    // }
 
     componentDidMount() {
-        // this.getApiToken();
-        // this.getProductList();
         if (!this.props.products) {
             this.props.dispatch(ProductList.initialAction());
         }
@@ -38,29 +31,11 @@ class ProductList extends Component {
     getApiToken = () => {
         getToken()
             .then(response => response.json())
-            .then(body => {
-
-                this.setState({token: body.token})
-            })
+            .then(body => this.setState({token: body.token}))
             .catch(err => console.log(err));
     };
 
-    // getProductList = () => {
-    //     const token = localStorage.getItem('tokenToVerify');
-    //     const {dispatch} = this.props;
-    //
-    //     getAllProducts(token)
-    //         .then((response) => {
-    //             return response.json();
-    //         })
-    //         .then(products => {
-    //             console.log(products)
-    //             dispatch(allProducts(products.products, products.count))
-    //         })
-    //         .catch((err) => {
-    //             console.log(err)
-    //         });
-    // };
+
 
     addToCart = (prod_id) => {
         const currentUserToken = localStorage.getItem('userToken');

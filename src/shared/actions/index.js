@@ -39,7 +39,7 @@ export const userProducts = (userProducts) => {
     }
 };
 
-export const currentUser = (currentUser) => {
+export const getCurrentUser = (currentUser) => {
     return {
         type: CURRENT_USER,
         currentUser

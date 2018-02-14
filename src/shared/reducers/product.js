@@ -19,7 +19,7 @@ export const _singleProduct = () => (dispatch, getState) => {
         .then(response => response.json())
         .then(products => {
             // console.log(getState)
-            const product = products.products.filter(prod => prod._id === '5a83026123d23d18fcfae0ae');
+            const product = products.products.filter(prod => prod._id === '5a7997435286820b97444be0');
             dispatch(singleProduct(product, product.variants))
         })
         .catch(err => dispatch(console.log(err)));

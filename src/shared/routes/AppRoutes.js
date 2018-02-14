@@ -4,7 +4,6 @@ import {Route, Switch} from 'react-router-dom';
 import {PrivateRoute} from './PrivateRouter';
 import Login from '../components/login/Login';
 import Register from '../components/register/Register';
-import ProductList from '../components/products/ProductList';
 import SingleProductContainer from '../containers/SingleProduct';
 import ProductListContainer from '../containers/ProductList';
 import UserCartContainer from '../containers/UserCart';
@@ -18,7 +17,7 @@ export const routes = [
     {
         path: "/",
         exact: true,
-        component: ProductList
+        component: ProductListContainer
     },
     {
         path: "/login",

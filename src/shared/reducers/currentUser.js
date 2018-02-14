@@ -1,4 +1,6 @@
 import {CURRENT_USER} from '../constants/constants'
+import {getCurrentUser} from "../actions";
+import jwt from "jsonwebtoken";
 
 const currentUser = (state = [], action) => {
     switch (action.type) {
@@ -11,6 +13,32 @@ const currentUser = (state = [], action) => {
     }
 }
 
+export const _getCurrentUser = (currentUserToken) => (dispatch, getState) => {
+    console.log()
+    if (currentUserToken) {
+        jwt.verify(currentUserToken, 'secret_key', (err, user) => {
+            if (err) console.log(err);
+            if (user) {
+                dispatch(getCurrentUser(user.user))
+            }
+        })
+    }
+};
 
+
+
+// userProfile = () => {
+//     const {dispatch} = this.props;
+//     const currentUserToken = localStorage.getItem('userToken');
+//
+//     if (currentUserToken) {
+//         jwt.verify(currentUserToken, 'secret_key', (err, user) => {
+//             if (err) console.log(err);
+//             if (user) {
+//                 dispatch(currentUser(user.user))
+//             }
+//         })
+//     }
+// }
 
 export default currentUser

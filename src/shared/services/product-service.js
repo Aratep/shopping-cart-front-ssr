@@ -1,3 +1,5 @@
+import "isomorphic-fetch";
+
 import {
     POST,
     PUT,

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {reset} from 'redux-form';
+import webStorage from 'web-storage'
 
 import LoginTemplate from './LoginTemplate';
 import {login, getToken} from '../../services/auth-service';
@@ -16,7 +17,7 @@ class Login extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getApiToken();
     }
 
