@@ -201,7 +201,11 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../shopping-cart-front-ssr" />
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/shopping-cart-front-ssr" />
+>>>>>>> ddb2fab5dfbb6db6d5606f9cfb83bf7e773a3ff8
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RunDashboard">
@@ -216,6 +220,12 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+>>>>>>> ddb2fab5dfbb6db6d5606f9cfb83bf7e773a3ff8
   <component name="SvnConfiguration">
     <configuration />
   </component>
